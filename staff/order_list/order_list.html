@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Order List</title>
+
+  <!-- Remix icon -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+
+  <!-- Sidebar CSS -->
+  <link rel="stylesheet" href="/components/sidebar.css" />
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="./order_list.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Main -->
+    <main class="main-content">
+      <!-- PAGE HEADER -->
+      <header class="page-header">
+        <h1>Order List</h1>
+
+        <div class="order-tabs">
+          <button class="tab active" data-status="ready">
+            Đang xử lý
+          </button>
+          <button class="tab" data-status="served">
+            Đã phục vụ
+          </button>
+        </div>
+      </header>
+
+      <!-- GRID -->
+      <section class="order-grid" id="order-grid">
+        <!-- JS render -->
+      </section>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+     <script src="/assets/js/auth.js"></script>
+
+  <script src="/config.js"></script>
+  <script src="/components/sidebar.js"></script>
+  <script src="./order_list.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manage Table</title>
+
+  <!-- Remix Icon -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+  >
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="/staff/detailtable/detailtable.css">
+
+  <!-- Sidebar CSS -->
+  <link rel="stylesheet" href="/staff/components/sidebar.css">
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- Sidebar (inject bằng JS) -->
+    <div id="sidebar"></div>
+
+    <!-- Main -->
+    <main class="main">
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="left">
+        </div>
+
+      </header>
+
+      <!-- Content -->
+      <section class="content">
+
+        <!-- Page head -->
+        <div class="page-head">
+          <div>
+            <h1>Table</h1>
+            <div class="filters">
+              <span>
+                <i class="ri-filter-3-line"></i> Filter By
+              </span>
+              <button class="reset">
+                <i class="ri-refresh-line"></i> Reset Filter
+              </button>
+            </div>
+          </div>
+
+          <!-- Add Table -->
+          <button class="btn-primary" id="btn-add-table">
+            <i class="ri-add-line"></i>
+            Add Table
+          </button>
+        </div>
+
+        <!-- Cards (JS render vào đây) -->
+        <section class="cards"></section>
+
+      </section>
+    </main>
+  </div>
+
+  <!-- ================= MODAL ================= -->
+
+  <!-- Overlay -->
+  <div class="modal-overlay" id="modal-overlay"></div>
+
+  <!-- Add / Edit Modal -->
+  <div class="modal" id="table-modal">
+    <div class="modal-header">
+      <h3 id="modal-title">Add Table</h3>
+      <span class="modal-close" id="close-modal">&times;</span>
+    </div>
+
+    <div class="modal-body">
+      <label>Table name</label>
+      <input type="text" id="table-name" placeholder="Table name">
+
+      <label>Seats</label>
+      <input type="number" id="table-seats" value="0" min="0">
+    </div>
+
+    <button class="modal-save" id="save-table">Save</button>
+  </div>
+
+  <!-- ================= JS ================= -->
+
+  <!-- Config -->
+  <script src="/assets/js/auth.js"></script>
+
+  <script src="/config.js"></script>
+
+  <!-- Sidebar -->
+  <script src="/staff/components/sidebar.js"></script>
+
+  <!-- Page logic -->
+
+  <script src="/staff/detailtable/detailtable.js"></script>
+
+</body>
+</html>

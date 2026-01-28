@@ -1,0 +1,246 @@
+/* ================== VARIABLES ================== */
+:root {
+  --bg:#f5f6f8;
+  --card:#ffffff;
+  --line:rgba(15,23,42,.12);
+  --text:#0f172a;
+  --muted:#6b7280;
+  --blue:#2563eb;
+  --amber:#f59e0b;
+  --radius:14px;
+}
+
+/* ================== RESET ================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ================== LAYOUT ================== */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ================== SIDEBAR ================== */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  color: #fff;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 28px;
+}
+
+/* ===== NAV ===== */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: rgba(255,255,255,.8);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all .2s ease;
+}
+
+.nav-item i {
+  font-size: 18px;
+}
+
+.nav-item:hover {
+  background: rgba(255,255,255,.08);
+  color: #fff;
+}
+
+.nav-item.active {
+  background: var(--blue);
+  color: #fff;
+}
+
+/* ================== MAIN ================== */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+/* ================== HEADER ================== */
+.header {
+  height: 64px;
+  background: var(--card);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand i {
+  font-size: 22px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.time {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ================== CONTENT ================== */
+.content {
+  padding: 20px;
+}
+
+/* ================== GRID ================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+/* ================== ORDER CARD ================== */
+.order {
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 10px 24px rgba(15,23,42,.08);
+}
+
+.order-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.id {
+  font-weight: 900;
+}
+
+.sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.status {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(245,158,11,.18);
+  color: #8a5400;
+}
+
+/* ================== ITEMS ================== */
+.items {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 44px 1fr 32px;
+  gap: 12px;
+  align-items: center;
+}
+
+.thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #f3f4f6;
+}
+
+.qty {
+  background: rgba(15,23,42,.06);
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 12px;
+  display: grid;
+  place-items: center;
+  height: 32px;
+}
+
+.item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.note {
+  font-size: 12px;
+  color: #ef4444;
+}
+
+/* ================== BUTTON ================== */
+.btn {
+  height: 44px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  background: var(--blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 72px;
+    padding: 18px 10px;
+  }
+
+  .sidebar-title {
+    display: none;
+  }
+
+  .nav-item span {
+    display: none;
+  }
+}

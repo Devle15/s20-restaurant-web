@@ -1,0 +1,112 @@
+<body>
+  <link rel="stylesheet" href="./menu.css" />
+  <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+  <div class="app">
+    <div id="sidebar"></div>
+
+    <main class="main">
+      <!-- Topbar -->
+      <header class="topbar">
+      </header>
+
+      <!-- Content -->
+      <section class="content">
+
+        <!-- ===== CATEGORIES ===== -->
+        <section class="block">
+          <div class="block-head">
+            <h2>Categories</h2>
+            <button id="add-category-btn" class="btn-primary small">
+              + Add Category
+            </button>
+          </div>
+          <div class="categories"></div>
+        </section>
+
+        <!-- ===== MENU ===== -->
+        <section class="block">
+          <div class="block-head">
+            <h2>Menu</h2>
+            <button id="add-menu-btn" class="btn-primary small">
+              + Add Menu Item
+            </button>
+          </div>
+
+          <div class="menu-section">
+            <section class="grid" id="menu-grid"></section>
+          </div>
+        </section>
+
+      </section>
+    </main>
+  </div>
+
+  <!-- ===== ADD MENU MODAL ===== -->
+  <div id="menu-modal" class="modal hidden">
+    <div class="modal-overlay"></div>
+
+    <div class="modal-content menu-modal">
+      <button class="modal-close" id="close-menu-modal">✕</button>
+
+      <h2>Add item</h2>
+
+      <label>Item name</label>
+      <input id="menu-name" type="text" placeholder="e.g Ocean Bistro" />
+
+      <label>Category classification</label>
+      <select id="menu-category">
+        <option value="">Select category</option>
+      </select>
+      <label>Price</label>
+<input id="menu-price" type="number" placeholder="e.g 45000" />
+
+<label>Description</label>
+<textarea id="menu-description" placeholder="Description..."></textarea>
+      <label>Restaurant Image</label>
+      <div class="image-row">
+        <div class="image-preview" id="image-preview">Preview</div>
+
+        <label class="upload-btn">
+          Upload Image
+          <input id="menu-image" type="file" accept="image/*" hidden />
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="cancel-menu" class="btn-ghost">Cancel</button>
+        <button id="save-menu" class="btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+  <!-- ===== ADD CATEGORY MODAL ===== -->
+<div id="category-modal" class="modal hidden">
+  <div class="modal-overlay"></div>
+
+  <div class="modal-content">
+    <button class="modal-close" id="close-category-modal">✕</button>
+
+    <h2>Add Category</h2>
+
+    <label>Category name</label>
+    <input id="category-name" type="text" placeholder="Ví dụ: Trà sữa" />
+
+    <label>Icon</label>
+    <input id="category-icon" type="text" placeholder="🍵" />
+
+    <div class="actions">
+      <button id="cancel-category" class="btn-ghost">Cancel</button>
+      <button id="save-category" class="btn-primary">Save</button>
+    </div>
+  </div>
+</div>
+
+  <!-- SCRIPTS -->
+     <script src="/assets/js/auth.js"></script>
+
+  <script src="../config.js"></script>
+  <script src="/components/sidebar.js"></script>
+  <script src="menu.js"></script>
+</body>

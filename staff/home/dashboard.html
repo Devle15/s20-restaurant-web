@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DashStack</title>
+
+  <!-- Remix Icon -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+  >
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="./dashboard.css" />
+
+  <!-- Sidebar CSS -->
+  <link rel="stylesheet" href="/components/sidebar.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- SIDEBAR (load bằng JS) -->
+    <div id="sidebar"></div>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+      </header>
+
+      <!-- CONTENT -->
+      <section class="content">
+        <div class="page-title">
+          <h1>Dashboard</h1>
+        </div>
+
+        <!-- KPI -->
+        <section class="kpis">
+          <article class="card kpi">
+            <div class="kpi-label">Total Points Issued</div>
+            <div class="kpi-value" id="total-points">—</div>
+          </article>
+
+          <article class="card kpi">
+            <div class="kpi-label">Total Reviews</div>
+            <div class="kpi-value" id="total-reviews">—</div>
+          </article>
+
+          <article class="card kpi">
+            <div class="kpi-label">Average Rating</div>
+            <div class="kpi-value" id="avg-rating">—</div>
+          </article>
+
+          <article class="card kpi">
+            <div class="kpi-label">Bad Reviews</div>
+            <div class="kpi-value" id="bad-reviews">—</div>
+          </article>
+        </section>
+
+        <!-- SALES / CHART -->
+        <section class="grid">
+          <article class="card sales">
+            <div class="card-head">
+              <div>
+                <div class="card-title">Sales Details</div>
+              </div>
+            </div>
+
+            <!-- CHART BODY (BẮT BUỘC PHẢI CÓ wrapper này) -->
+            <div class="sales-body">
+              <canvas id="salesChart"></canvas>
+            </div>
+          </article>
+        </section>
+
+      </section>
+    </main>
+  </div>
+<script src="/assets/js/auth.js"></script>
+
+<script src="/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/components/sidebar.js"></script>
+<script src="./dashboard.js"></script>
+<script>
+  requestAnimationFrame(() => {
+    window.initDashboard?.();
+  });
+</script>
+
+</script>
+</body>
+</html>

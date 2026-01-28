@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kitchen – Completed Orders</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+
+  <!-- CARD + LAYOUT (dùng chung với Active) -->
+  <link rel="stylesheet" href="../Accepted_Orders/accepted_orders.css" />
+  <link rel="stylesheet" href="./completed.css" />
+
+  <!-- SIDEBAR CSS (PHẢI DÙNG ABSOLUTE PATH) -->
+  <link rel="stylesheet" href="/layout/sidebar.css" />
+</head>
+
+<body>
+  <div class="layout">
+
+    <!-- ===== SIDEBAR ===== -->
+    <div id="sidebar"></div>
+
+    <!-- ===== MAIN ===== -->
+    <div class="main">
+      <header class="header">
+        <div class="brand">
+          <i class="ri-checkbox-circle-line"></i>
+          <div>
+            <div class="title">Completed Orders</div>
+            <div class="time" id="clock">--:--</div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="grid" id="grid">
+          <!-- completed orders -->
+        </section>
+      </main>
+    </div>
+
+  </div>
+
+  <!-- CONFIG -->
+  <script src="/config.js"></script>
+
+  <!-- LOAD SIDEBAR (GIỐNG ACTIVE) -->
+  <script>
+    fetch("/layout/sidebar.html")
+      .then(res => {
+        if (!res.ok) throw new Error("sidebar.html not found");
+        return res.text();
+      })
+      .then(html => {
+        document.getElementById("sidebar").innerHTML = html;
+
+        // load sidebar logic sau khi HTML đã inject
+        const script = document.createElement("script");
+        script.src = "/layout/sidebar.js";
+        document.body.appendChild(script);
+      })
+      .catch(err => console.error(err));
+  </script>
+
+  <!-- PAGE SCRIPT -->
+     <script src="/assets/js/auth.js"></script>
+
+  <script src="./completed.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kitchen – In Progress</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+
+  <!-- dùng chung style -->
+  <link rel="stylesheet" href="../Accepted_Orders/accepted_orders.css" />
+  <link rel="stylesheet" href="In_progess.css" />
+  <link rel="stylesheet" href="/layout/sidebar.css" />
+</head>
+
+<body>
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <div id="sidebar"></div>
+
+    <!-- MAIN -->
+    <div class="main">
+      <header class="header">
+        <div class="brand">
+          <i class="ri-loader-3-line"></i>
+          <div>
+            <div class="title">In-progress Orders</div>
+            <div class="time" id="clock">--:--</div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="grid" id="grid"></section>
+      </main>
+    </div>
+
+  </div>
+
+  <!-- CONFIG -->
+    <script src="/assets/js/auth.js"></script>
+
+  <script src="/config.js"></script>
+
+  <!-- PAGE LOGIC -->
+  <script src="/chef/In_progress/In_progress.js"></script>
+  
+
+  <!-- SIDEBAR -->
+  <script>
+    fetch("/layout/sidebar.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("sidebar").innerHTML = html;
+        const s = document.createElement("script");
+        s.src = "/layout/sidebar.js";
+        document.body.appendChild(s);
+      });
+  </script>
+</body>
+</html>

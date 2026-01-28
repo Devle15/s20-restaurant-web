@@ -1,0 +1,135 @@
+/* Reset + base */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f5f6f8;
+}
+
+/* Layout tổng */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 120px;
+}
+
+/* Card login */
+.login-card {
+  background: #fff;
+  width: 380px;
+  padding: 36px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Header: logo + welcome */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #E95322;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 70%;       
+  height: auto;
+  object-fit: contain; 
+}
+
+
+.header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Subtitle */
+.subtitle {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #f05a28;
+}
+
+/* Message */
+.message {
+  color: #e53935;
+  font-size: 13px;
+  min-height: 18px;
+  margin-bottom: 8px;
+}
+
+/* Button */
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  opacity: 0.9;
+}
+
+.btn-login:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Illustration */
+.login-illustration img {
+  width: 520px;
+  max-width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .login-page {
+    justify-content: center;
+    padding: 40px;
+  }
+
+  .login-illustration {
+    display: none;
+  }
+}
